@@ -1,14 +1,21 @@
 <template>
-    <div>Chat</div>
+    <div>
+        <audio src=""></audio>
+    </div>
 </template>
 
 <script>
     export default {
+        data(){
+            return {
+                roomId: '1'
+            }
+        },
         name: 'Chat',
         mounted () {
             console.log('mounted')
-            this.$socket.emit('mounted', 'Message from client')
-            this.$socket.emit('join-room', Object.keys(this), 11)
+            
+            // this.$socket.emit('joined', this.roomId)
             },
         sockets : {
             test(data) {
